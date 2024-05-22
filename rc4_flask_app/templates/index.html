@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>RC4 Encryption/Decryption</title>
+  </head>
+  <body>
+    <h1>RC4 Encryption/Decryption</h1>
+    
+    <form action="/encrypt" method="post">
+      <h2>Encrypt</h2>
+      <label for="key">Key:</label>
+      <input type="text" id="key" name="key" required><br><br>
+      <label for="plaintext">Plaintext:</label>
+      <textarea id="plaintext" name="plaintext" required></textarea><br><br>
+      <button type="submit">Encrypt</button>
+    </form>
+    
+    {% if ciphertext %}
+    <h2>Ciphertext</h2>
+    <p>{{ ciphertext }}</p>
+    {% endif %}
+    
+    <form action="/decrypt" method="post">
+      <h2>Decrypt</h2>
+      <label for="key">Key:</label>
+      <input type="text" id="key" name="key" required><br><br>
+      <label for="ciphertext">Ciphertext:</label>
+      <textarea id="ciphertext" name="ciphertext" required></textarea><br><br>
+      <button type="submit">Decrypt</button>
+    </form>
+    
+    {% if plaintext %}
+    
+    <h2>Plaintext</h2>
+    <p>{{ plaintext }}</p>
+    {% endif %}
+  </body>
+</html>
